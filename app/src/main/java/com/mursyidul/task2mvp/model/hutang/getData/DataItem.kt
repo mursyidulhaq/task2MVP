@@ -1,8 +1,10 @@
 package com.mursyidul.task2mvp.model.hutang.getData
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
-data class DataItem(
+data class DataItem (
 
         @field:SerializedName("nohp_penghutang")
         val nohpPenghutang: String? = null,

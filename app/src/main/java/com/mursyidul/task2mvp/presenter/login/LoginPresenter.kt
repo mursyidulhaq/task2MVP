@@ -1,5 +1,6 @@
 package com.mursyidul.task2mvp.presenter.login
 
+import com.mursyidul.task2mvp.model.login.DataItem
 import com.mursyidul.task2mvp.model.login.ResponseServerLogin
 import com.mursyidul.task2mvp.network.login.ConfigNetworkLogin
 import retrofit2.Call
@@ -24,7 +25,7 @@ class LoginPresenter(var loginView :LoginInterface) {
                                 val message = response.body()?.message
                                 val status = response.body()?.isSuccess
                                 if (status ?: true) {
-                                    responseServer?.let { loginView.onResponseLogin(it) }
+                                    responseServer?.data
                                 } else {
                                     loginView.isErrorLogin(message ?: "")
                                 }
