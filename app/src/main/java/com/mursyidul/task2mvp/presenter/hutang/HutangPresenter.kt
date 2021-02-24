@@ -36,6 +36,34 @@ class HutangPresenter(var hutangView :HutangInterface) {
 
 
     }
+
+    fun deleteHutang(id:String)
+    {
+        ConfigNetworkHutang.getRetrofit().deleteData(id)
+            .enqueue(object :Callback<ResponseServerInsertHutang>{
+                override fun onFailure(call: Call<ResponseServerInsertHutang>, t: Throwable) {
+                    hutangView .errorRegister(t.localizedMessage)
+                }
+
+                override fun onResponse(
+                    call: Call<ResponseServerInsertHutang>,
+                    response: Response<ResponseServerInsertHutang>
+                ) {
+                    if (response.isSuccessful) {
+                        val responseServer = response.body()
+                        val message = response.body()?.message
+                        val status = response.body()?.isSuccess
+                        if (status ?: true) {
+                            responseServer?.let { hutangView.delete(it) }
+                        } else {
+                            hutangView.errorRegister(message ?: "")
+                        }
+
+                    }
+                }
+
+            })
+    }
 }
 
 

@@ -25,7 +25,6 @@ class LoginActivity : AppCompatActivity(), LoginInterface {
 
             val email = etemaillogin.text.toString()
             val password = etpasswordlogin.text.toString()
-
             loginpresenter?.login(email,password)
         }
         txtregister.setOnClickListener {
@@ -37,12 +36,14 @@ class LoginActivity : AppCompatActivity(), LoginInterface {
 
 
 
-    override fun onResponseLogin(msg: String,data: List<DataItem>) {
-        var session = SesionsManager(this)
-        session.name = data.get(0).nama
-        session.email = data.get(0).email
-        session.log = true
-        startActivity(Intent(this,HutangActivity::class.java))
+    override fun onResponseLogin(response: ResponseServerLogin) {
+         var session = SesionsManager(this)
+//        session.name = data.get(0).nama
+//        session.email = data.get(0).email
+          session.log = true
+
+        val intent = Intent(applicationContext,HutangActivity::class.java)
+        startActivity(intent)
     }
 
 
@@ -57,4 +58,6 @@ class LoginActivity : AppCompatActivity(), LoginInterface {
     fun showToas(msg :String){
         Toast.makeText(applicationContext,msg,Toast.LENGTH_SHORT).show()
     }
+
+
 }

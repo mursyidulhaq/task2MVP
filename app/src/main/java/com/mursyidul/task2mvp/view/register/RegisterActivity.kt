@@ -23,7 +23,23 @@ class RegisterActivity : AppCompatActivity(), RegisterInterface {
             val email = etemail.text.toString()
             val password = etpassword.text.toString()
             val pasworrd2 = etpassword2.text.toString()
-            registerPresenter?.register(nama,email,password,pasworrd2)
+            if (nama.isEmpty())
+            {
+                etnama.error = "nama tidak boleh kosong"
+            }else if(email.isEmpty())
+            {
+                etemail.error = "email tidak boleh kosong"
+            }else if(password.isEmpty())
+            {
+                etpassword.error = "password tidak boleh kosong"
+            }else if (pasworrd2.isEmpty())
+            {
+                etpassword2.error = "konfirmasi password todak kosong"
+            }else
+            {
+                registerPresenter?.register(nama,email,password,pasworrd2)
+            }
+
 
         }
 

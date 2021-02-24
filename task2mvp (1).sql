@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 23, 2021 at 04:46 PM
+-- Generation Time: Feb 24, 2021 at 03:29 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -39,7 +39,8 @@ CREATE TABLE `hutang` (
 --
 
 INSERT INTO `hutang` (`id_hutang`, `nama_penghutang`, `nohp_penghutang`, `tanggal_pinjam`, `tanggal_kembali`) VALUES
-(1, 'mursyidu', '827ccb0eea8a', ' 2020', '2021');
+(5, 'mursyidul haq', 'mursyidul ha', ' ffc', 'zxd'),
+(6, 'mursyidul haq', '082389092795', ' 8 Septemb', '23 Februar');
 
 -- --------------------------------------------------------
 
@@ -64,7 +65,9 @@ INSERT INTO `user` (`id_user`, `email`, `passwordd`, `nama`) VALUES
 (3, 'mursyidulhaq789@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'mursyidul haq'),
 (4, 'mursyidulhaq79@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b', 'mursyidul haq'),
 (5, 'mursyidulhaq71@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'rasyid'),
-(6, 'abcd@gmail.com', 'fcea920f7412b5da7be0cf42b8c93759', 'rasyid');
+(6, 'abcd@gmail.com', 'fcea920f7412b5da7be0cf42b8c93759', 'rasyid'),
+(7, 'mursyidulhaq79@gmail.com', 'fcea920f7412b5da7be0cf42b8c93759', 'mursyidul haq'),
+(8, 'mursyidulhaq78@gmail.com', 'fcea920f7412b5da7be0cf42b8c93759', 'bbxb');
 
 --
 -- Indexes for dumped tables
@@ -90,12 +93,12 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `hutang`
 --
 ALTER TABLE `hutang`
-  MODIFY `id_hutang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_hutang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

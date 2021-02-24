@@ -5,7 +5,7 @@ import com.mursyidul.task2mvp.model.login.ResponseServerLogin
 
 interface LoginInterface {
 
-    fun onResponseLogin(msg: String,data:List<DataItem>)
+    fun onResponseLogin(response :ResponseServerLogin)
     fun isErrorLogin(msg :String)
     fun isEmpty()
 

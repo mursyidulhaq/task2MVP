@@ -11,7 +11,7 @@ class RegisterPresenter (var registerView :RegisterInterface){
  {
 
 
-     if (nama.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty() && passwordcomrfirm.isNotEmpty()){
+
          if (password != passwordcomrfirm)
          {
              registerView.noMact()
@@ -20,7 +20,7 @@ class RegisterPresenter (var registerView :RegisterInterface){
              registerView.errorRegister("Password minimal 6 karakter")
          }
          else {
-             ConfigNetwork.getRetrofit().register(nama, email, password, passwordcomrfirm)
+             ConfigNetwork.getRetrofit().register(nama, email, password)
                  .enqueue(object : Callback<ResponseServerRegister> {
                      override fun onFailure(call: Call<ResponseServerRegister>, t: Throwable) {
                          registerView.errorRegister(t.localizedMessage)
@@ -44,9 +44,6 @@ class RegisterPresenter (var registerView :RegisterInterface){
                      }
                  })
          }
-     }else
-     {
-         registerView.empty()
-     }
+
  }
 }

@@ -25,7 +25,7 @@ class LoginPresenter(var loginView :LoginInterface) {
                                 val message = response.body()?.message
                                 val status = response.body()?.isSuccess
                                 if (status ?: true) {
-                                    responseServer?.data
+                                    responseServer?.let { loginView?.onResponseLogin(it) }
                                 } else {
                                     loginView.isErrorLogin(message ?: "")
                                 }

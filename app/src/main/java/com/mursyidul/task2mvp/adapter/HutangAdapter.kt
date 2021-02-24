@@ -15,6 +15,7 @@ class HutangAdapter(val data : List<DataItem>,val itemClick: onClickListener):Re
         val nohp = view.txtnohphutang
         val tgl_pinjam = view.txtpinjamhutang
         val tgl_kebali = view.txtkembalihutang
+        val hapus = view.btnHApus
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HutangHolder {
@@ -37,9 +38,9 @@ class HutangAdapter(val data : List<DataItem>,val itemClick: onClickListener):Re
             itemClick.detail(item)
         }
 
-//        holder.btnhapus.setOnClickListener {
-//            itemClick.hapus(item)
-//        }
+        holder.hapus.setOnClickListener {
+            itemClick.hapus(item)
+        }
     }
 
     interface onClickListener{

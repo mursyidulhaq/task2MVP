@@ -12,7 +12,8 @@
         android:layout_height="wrap_content"
         android:text="Logout"
         android:textStyle="bold"
-        android:textSize="30dp"
+        android:textSize="15dp"
+        android:layout_margin="5dp"
         android:layout_gravity="right"
         />
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -20,17 +21,16 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:src="@drawable/ic_baseline_add"
+        android:src="@drawable/ic_baseline_add_24"
         android:layout_marginBottom="10dp"
         />
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvhutang"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:listitem="@layout/list_hutang"
 
-        />
-
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvhutang"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/list_hutang"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
 
 </LinearLayout>

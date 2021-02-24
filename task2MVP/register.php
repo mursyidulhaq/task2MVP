@@ -15,7 +15,7 @@ if(!empty($_POST['email']) && !empty($_POST['passwordd']) && !empty($_POST['nama
     {
         set_response(true, "Email sudah terdaftar", $data);
     }else{
-        $query = "INSERT INTO user(email,password,nama) VALUES ('$email','$password','$nama')";
+        $query = "INSERT INTO user(email,passwordd,nama) VALUES ('$email','$password','$nama')";
         $insert = mysqli_query($connect, $query);
         if($insert)
         {
@@ -27,7 +27,7 @@ if(!empty($_POST['email']) && !empty($_POST['passwordd']) && !empty($_POST['nama
     }
 }
  else{
-    set_response(false," data tidak boleh kosong");
+    set_response(false," data tidak boleh kosong lur");
 }
 function set_response($isSuccess, $message)
 {

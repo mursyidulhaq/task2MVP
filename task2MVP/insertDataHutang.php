@@ -3,7 +3,7 @@ include_once('koneksi.php');
 if(!empty($_POST['nama_penghutang']) && !empty($_POST['nohp_penghutang']) && !empty($_POST['tanggal_pinjam']) && !empty($_POST['tanggal_kembali']) )
 {
     $nama_penghutang = $_POST['nama_penghutang'];
-    $nohp_penghutang = md5($_POST['nohp_penghutang']);
+    $nohp_penghutang = ($_POST['nohp_penghutang']);
     $tanggal_pinjam = $_POST['tanggal_pinjam'];
     $tanggal_kembali = $_POST['tanggal_kembali'];
 
@@ -11,9 +11,9 @@ if(!empty($_POST['nama_penghutang']) && !empty($_POST['nohp_penghutang']) && !em
         $insert = mysqli_query($connect, $query);
         if($insert)
         {
-            set_response(true,"Register succes");
+            set_response(true,"data berhasil di simpan");
         }else{
-            set_response(false,"Register false");
+            set_response(false,"daa gagal disimpan");
         }
 
     

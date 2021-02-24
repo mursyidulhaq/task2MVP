@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Task2MVP"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.produksi.InsertActivity"></activity>
+        <activity android:name=".view.produksi.UpdateActivity"></activity>
+        <activity android:name=".view.produksi.InsertActivity" />
         <activity
             android:name=".view.splassSreen.SplassScreenActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -24,7 +25,7 @@
         </activity>
         <activity android:name=".view.produksi.HutangActivity" />
         <activity android:name=".view.register.RegisterActivity" />
-        <activity android:name=".view.login.LoginActivity"></activity>
+        <activity android:name=".view.login.LoginActivity" />
         <activity android:name=".view.MainActivity" />
     </application>
 

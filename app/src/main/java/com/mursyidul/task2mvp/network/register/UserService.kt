@@ -12,8 +12,6 @@ interface UserService {
     fun register(
             @Field("nama")nama :String,
             @Field("email")email:String,
-            @Field("password")password :String,
-            @Field("passwordConfirm")paswordConform :String
-
+            @Field("passwordd")password :String
     ):Call<ResponseServerRegister>
 }
